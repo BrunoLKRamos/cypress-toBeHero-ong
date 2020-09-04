@@ -1,0 +1,22 @@
+{
+  "name": "youtube-cypress",
+  "version": "1.0.0",
+  "description": "Baixe o projeto no Github: - `https://github.com/samlucax/youtube-cypress.git`",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run --config video=false --env allure=true",
+    "allure:generate": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "rimraf allure-results/ allure-report || true",
+    "allure:generate-complete": "npx npm-run-all allure:clear cy:run allure:generate allure:open",
+    "cy:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.8.2",
+    "cypress": "^4.1.0",
+    "rimraf": "^3.0.2"
+  }
+}
